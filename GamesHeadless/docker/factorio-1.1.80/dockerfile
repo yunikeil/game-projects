@@ -1,0 +1,10 @@
+FROM ubuntu
+
+RUN cd root && \
+    apt-get update && \
+    apt-get install -y xz-utils libasound2 wget && \
+    wget -O factorio.tar.xz https://www.factorio.com/get-download/1.1.80/headless/linux64 && \
+    tar -xvf factorio.tar.xz && \
+    rm factorio.tar.xz && \
+    mkdir factorio/mods && \
+    mkdir factorio/saves
